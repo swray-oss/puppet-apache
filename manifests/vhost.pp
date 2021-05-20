@@ -1,6 +1,6 @@
 # @summary A short summary of the purpose of this defined type.
 #
-define apache::vhost (
+define apache::vhosts (
   Integer   $port,
   String[1] $subdomain,
   String    $admin,
