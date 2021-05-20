@@ -6,6 +6,5 @@ class apache::service {
     ensure     => $apache::service_ensure,
     enable     => $apache::service_enable,
     hasrestart => true,
-
   }
 }
