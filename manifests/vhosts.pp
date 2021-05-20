@@ -23,6 +23,6 @@ define apache::vhosts (
     group   => $apache::vhosts_group,
     mode    => '0644',
     content => epp('apache/vhosts.conf.epp', {'port' => $port, 'subdomain' => $subdomain, 'admin' => $admin, 'docroot' => $docroot}),
-    notify  => Service['apache::service'],
+    notify  => Service["${apache::service_name}"],
   }
 }
