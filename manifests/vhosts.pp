@@ -1,5 +1,11 @@
 # @summary A short summary of the purpose of this defined type.
 #
+# @example
+# apache::vhosts { 'namevar':
+#   port      => INT,
+#   subdomain => STR,
+#   admin     => STR,
+#   docroot   => STR,
 define apache::vhosts (
   Integer   $port,
   String[1] $subdomain,
