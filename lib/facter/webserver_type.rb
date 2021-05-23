@@ -1,4 +1,4 @@
-Facter.add(:webserver_type) do
+Facter.add('webserver_type') do
   setcode do
     confine :kernel => "Linux"
     osfamily = Facter.value(:osfamily)
