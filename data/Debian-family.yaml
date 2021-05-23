@@ -1,5 +1,5 @@
 ---
-apache::install_name: "%{lookup('webserver_type')}"
+apache::install_name: "%{facts.webserver_type}"
 apache::config_path: '/etc/apache2/apache2.conf'
 apache::service_name: 'apache2'
 apache::vhosts_dir: '/etc/apache2/sites-available'
