@@ -4,15 +4,18 @@ Facter.add(:webserver) do
     osfamily = Facter.value(:osfamily)
     case osfamily
     when 'Debian'
-      :service => 'apache2',
-      :package => 'apache2',
-      :user    => 'www-data',
-      :group   => 'www-data'
+      value = new Hash()
+      value[:service] = 'apache2'
+      value[:package] = 'apache2'
+      value[:user]    = 'www-data'
+      value[:group]   = 'www-data'
+      value
     when 'RedHat'
-      :service => 'httpd',
-      :package => 'httpd',
-      :user    => 'apache',
-      :group   => 'apache'
+      value[:service] = 'httpd'
+      value[:package] = 'httpd'
+      value[:user]    = 'apache'
+      value[:group]   = 'apache'
+      value
     end
   end
 end
