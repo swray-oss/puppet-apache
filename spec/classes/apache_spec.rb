@@ -15,10 +15,10 @@ describe 'apache' do
       case os_facts[:osfamily]
       when 'Debian'
         it { is_expected.to contain_package('apache2').with_ensure('present') }
-        it { is_expected.to contain service('apache2').with(ensure: 'running', enable: 'true', hasrestart: true) }
+        it { is_expected.to contain_service('apache2').with(ensure: 'running', enable: 'true', hasrestart: true) }
       when 'RedHat'
         it { is_expected.to contain_package('httpd').with_ensure('present') }
-        it { is_expected.to contain service('httpd').with(ensure: 'running', enable: 'true', hasrestart: true) }
+        it { is_expected.to contain_service('httpd').with(ensure: 'running', enable: 'true', hasrestart: true) }
       end
     end
   end
