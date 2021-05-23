@@ -1,4 +1,4 @@
-Facter.add(:webserver_vars) do
+Facter.add('webserver_vars') do
   setcode do
     osfamily = Facter.value(:osfamily)
     value = new Hash()
