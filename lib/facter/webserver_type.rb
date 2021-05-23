@@ -1,5 +1,5 @@
-Facter.add('webserver_vars') do
-  setcode do
+Facter.add(:webserver_vars, :type => :aggregate) do
+  chunk(:webserver_values) do
     osfamily = Facter.value(:osfamily)
     value = new Hash()
     case osfamily
