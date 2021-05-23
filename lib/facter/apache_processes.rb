@@ -1,6 +1,7 @@
 Facter.add(:apache_processes) do
-  context :kernel => "Linux"
+  
   setcode do
+    confine :kernel => "Linux"
     osfamily = Facter.value(:osfamily)
     case osfamily
     when 'Debian'
