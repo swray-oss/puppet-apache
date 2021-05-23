@@ -7,6 +7,9 @@ describe 'apache' do
     context "on #{os}" do
       let(:facts) { os_facts }
 
+      it { is_expected.to contain_class('apache::install') }
+      it { is_expected.to contain_class('apache::config') }
+      it { is_expected.to contain_class('apache::service') }
       it { is_expected.to compile }
     end
   end
