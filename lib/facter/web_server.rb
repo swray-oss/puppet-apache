@@ -1,6 +1,6 @@
 Facter.add(:webserver_service) do
   setcode do
-    confile :kernel => "Linux"
+    confine :kernel => "Linux"
     case osfamily
     when 'Debian'
       'apache2'
