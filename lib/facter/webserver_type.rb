@@ -1,7 +1,7 @@
-Facter.add(:webserver_vars, :type => :aggregate) do
-  chunk(:webserver_values) do
+Facter.add(:webserver, :type => :aggregate) do
+  chunk(:webserver_vars) do
     osfamily = Facter.value(:osfamily)
-    value = new Hash()
+    value = {}
     case osfamily
     when 'Debian'
       value['service'] = 'apache2'
