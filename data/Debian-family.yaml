@@ -1,7 +1,7 @@
 ---
-apache::install_name: "%{facts.webserver[package]}"
-apache::config_path:  "%{facts.webserver[config_path]}"
-apache::service_name: "%{facts.webserver[service]}"
-apache::vhosts_dir:   "%{facts.webserver[vhosts_dir]}"
+apache::install_name: 'apache2'
+apache::config_path:  '/etc/apache2/apache2.conf'
+apache::service_name: 'apache2'
+apache::vhosts_dir:   '/etc/apache2/sites-available'
 apache::vhosts_owner: 'www-data'
 apache::vhosts_group: 'www-data'
